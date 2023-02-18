@@ -17,13 +17,15 @@ struct ContentView: View {
                                 Resource(name: "Episode")]
 
   @State private var selection: Resource? = nil
+  @State private var columnVisibility = NavigationSplitViewVisibility.all
 
   var body: some View {
-    NavigationSplitView {
+    NavigationSplitView(columnVisibility: $columnVisibility) {
       List(resources, id: \.self, selection: $selection) { resource in
         NavigationLink(resource.name, value: resource)
       }.onAppear {
         self.selection = resources.first!
+        self.columnVisibility = .all
       }
     } content: {
       HomeView(title: selection?.name ?? "")
