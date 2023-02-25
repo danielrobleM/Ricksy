@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21DCA92329997E2600F5272E /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DCA92229997E2600F5272E /* SideBarView.swift */; };
+		21B1EB9929A2E7FC00D8D0ED /* CharacterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1EB9829A2E7FC00D8D0ED /* CharacterRowView.swift */; };
+		21F7E37829A1982E00430604 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7E37729A1982E00430604 /* MainView.swift */; };
+		21F7E37D29A2BA8600430604 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7E37C29A2BA8600430604 /* Models.swift */; };
 		21FE8F85299056CF00284F50 /* RicksyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8F84299056CF00284F50 /* RicksyApp.swift */; };
 		21FE8F87299056CF00284F50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8F86299056CF00284F50 /* ContentView.swift */; };
 		21FE8F89299056D000284F50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21FE8F88299056D000284F50 /* Assets.xcassets */; };
@@ -15,7 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		21DCA92229997E2600F5272E /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		21B1EB9829A2E7FC00D8D0ED /* CharacterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRowView.swift; sourceTree = "<group>"; };
+		21F7E37729A1982E00430604 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		21F7E37C29A2BA8600430604 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		21FE8F81299056CF00284F50 /* Ricksy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ricksy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FE8F84299056CF00284F50 /* RicksyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RicksyApp.swift; sourceTree = "<group>"; };
 		21FE8F86299056CF00284F50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +60,9 @@
 			children = (
 				21FE8F84299056CF00284F50 /* RicksyApp.swift */,
 				21FE8F86299056CF00284F50 /* ContentView.swift */,
-				21DCA92229997E2600F5272E /* SideBarView.swift */,
+				21F7E37729A1982E00430604 /* MainView.swift */,
+				21B1EB9829A2E7FC00D8D0ED /* CharacterRowView.swift */,
+				21F7E37C29A2BA8600430604 /* Models.swift */,
 				21FE8F88299056D000284F50 /* Assets.xcassets */,
 				21FE8F8A299056D000284F50 /* Ricksy.entitlements */,
 				21FE8F8B299056D000284F50 /* Preview Content */,
@@ -142,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F7E37D29A2BA8600430604 /* Models.swift in Sources */,
 				21FE8F87299056CF00284F50 /* ContentView.swift in Sources */,
-				21DCA92329997E2600F5272E /* SideBarView.swift in Sources */,
+				21F7E37829A1982E00430604 /* MainView.swift in Sources */,
 				21FE8F85299056CF00284F50 /* RicksyApp.swift in Sources */,
+				21B1EB9929A2E7FC00D8D0ED /* CharacterRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

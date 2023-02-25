@@ -7,28 +7,75 @@
 
 import SwiftUI
 
+enum ResourceType: CaseIterable {
+  case character, location, episode
+
+  var name: String {
+    switch self {
+    case .character:
+      return "Character"
+    case .location:
+      return "Location"
+    case .episode:
+      return "Episode"
+    }
+  }
+
+  var endpoint: String {
+    switch self {
+    case .character:
+      return "https://rickandmortyapi.com/api/character"
+    case .location:
+      return "https://rickandmortyapi.com/api/location"
+    case .episode:
+      return "https://rickandmortyapi.com/api/episode"
+    }
+  }
+
+  var decodable: Decodable.Type {
+    switch self {
+    case .character:
+      return CharactersResponse.self
+    case .location:
+      return LocationResponse.self
+    case .episode:
+      return EpisodeResponse.self
+    }
+  }
+
+  var decodable2: String {
+    switch self {
+    case .character:
+      return "CharactersResponse"
+    case .location:
+      return "LocationResponse"
+    case .episode:
+      return "EpisodeResponse"
+    }
+  }
+}
+
 struct Resource: Hashable {
   let name: String
 }
 
 struct ContentView: View {
-  let resources: [Resource] = [Resource(name: "Character"),
-                                Resource(name: "Location"),
-                                Resource(name: "Episode")]
+  let resourcesOptions: [ResourceType] = ResourceType.allCases
 
-  @State private var selection: Resource? = nil
+  @State private var selection: ResourceType? = nil
   @State private var columnVisibility = NavigationSplitViewVisibility.all
 
   var body: some View {
     NavigationSplitView(columnVisibility: $columnVisibility) {
-      List(resources, id: \.self, selection: $selection) { resource in
+      List(resourcesOptions, id: \.self, selection: $selection) { resource in
         NavigationLink(resource.name, value: resource)
       }.onAppear {
-        self.selection = resources.first!
+        self.selection = resourcesOptions.first!
         self.columnVisibility = .all
       }
     } content: {
-      HomeView(title: selection?.name ?? "")
+      MainView(resourceType: selection ?? .character)
+        .frame(minWidth: 400)
     } detail: {
       DetailView()
     }
@@ -41,47 +88,9 @@ struct ContentView_Previews: PreviewProvider {
   }
 }
 
-struct HomeView: View {
-  let title: String
-  var resource: String = "Select one please"
-  var body: some View {
-    Text(resource).navigationTitle(title)
-  }
-}
-
 struct DetailView: View {
   var resource: String = "Select one please"
   var body: some View {
     Text(resource)
   }
 }
-
-/*
-struct DemoNavigationStack: View {
-  let resources: [Resource] = [Resource(name: "Character"),
-                                Resource(name: "Location"),
-                                Resource(name: "Episode")]
-
-  var body: some View {
-    NavigationStack {
-      List {
-        Section("Resources") {
-          ForEach(resources, id: \.self) { resource in
-            NavigationLink(value: resource) {
-              Label(resource.name, image: "")
-            }
-          }
-        }
-        Section("Favorites") {
-          Label("To define", image: "")
-        }
-      }
-      .listStyle(SidebarListStyle())
-      //.navigationTitle("Rick And Morty API")
-      .navigationDestination(for: Resource.self) { resource in
-        DetailView(resource: resource.name)
-      }
-    }
-  }
-}
-*/
