@@ -87,10 +87,3 @@ struct ContentView_Previews: PreviewProvider {
     ContentView().previewInterfaceOrientation(.landscapeLeft)
   }
 }
-
-struct DetailView: View {
-  var resource: String = "Select one please"
-  var body: some View {
-    Text(resource)
-  }
-}
