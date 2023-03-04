@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
-  @StateObject var viewModel: MainViewModel
-
   let resourceType: ResourceType
+  @EnvironmentObject var selection: EnvironmentSelection
+  @StateObject var viewModel: MainViewModel
 
   init(resourceType: ResourceType) {
     self.resourceType = resourceType
@@ -30,16 +30,22 @@ struct MainView: View {
       } else {
         switch viewModel.resourceType {
         case .character:
-          List(viewModel.dataSource, id: \.self) { character in
-            CharacterRowView(character: character)
+          List(viewModel.dataSource, id: \.self, selection: $selection.character) { character in
+            NavigationLink(value: character.id) {
+              CharacterRowView(character: character)
+            }
           }
         case .location:
-          List(viewModel.dataSourceLocation, id: \.self) { dataSource in
-            Text(dataSource.name)
+          List(viewModel.dataSourceLocation, id: \.self, selection: $selection.location) { location in
+            NavigationLink(value: location.id) {
+              Text(location.name)
+            }
           }
         case .episode:
-          List(viewModel.dataSourceEpisode, id: \.self) { dataSource in
-            Text(dataSource.name)
+          List(viewModel.dataSourceEpisode, id: \.self, selection: $selection.episode) { episode in
+            NavigationLink(value: episode.id) {
+              Text(episode.name)
+            }
           }
         }
       }

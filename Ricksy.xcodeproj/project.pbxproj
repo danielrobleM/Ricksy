@@ -10,6 +10,7 @@
 		21B1EB9929A2E7FC00D8D0ED /* CharacterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1EB9829A2E7FC00D8D0ED /* CharacterRowView.swift */; };
 		21EE23DA29ABBC4600D55F50 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE23D929ABBC4600D55F50 /* DetailView.swift */; };
 		21EE23DD29ABBC8600D55F50 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE23DC29ABBC8600D55F50 /* MainViewModel.swift */; };
+		21EE23DF29ABC27B00D55F50 /* GlobalSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EE23DE29ABC27B00D55F50 /* GlobalSelection.swift */; };
 		21F7E37829A1982E00430604 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7E37729A1982E00430604 /* MainView.swift */; };
 		21F7E37D29A2BA8600430604 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F7E37C29A2BA8600430604 /* Models.swift */; };
 		21FE8F85299056CF00284F50 /* RicksyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE8F84299056CF00284F50 /* RicksyApp.swift */; };
@@ -22,6 +23,7 @@
 		21B1EB9829A2E7FC00D8D0ED /* CharacterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRowView.swift; sourceTree = "<group>"; };
 		21EE23D929ABBC4600D55F50 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		21EE23DC29ABBC8600D55F50 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		21EE23DE29ABC27B00D55F50 /* GlobalSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalSelection.swift; sourceTree = "<group>"; };
 		21F7E37729A1982E00430604 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		21F7E37C29A2BA8600430604 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		21FE8F81299056CF00284F50 /* Ricksy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ricksy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,7 @@
 			children = (
 				21F7E37C29A2BA8600430604 /* Models.swift */,
 				21EE23DC29ABBC8600D55F50 /* MainViewModel.swift */,
+				21EE23DE29ABC27B00D55F50 /* GlobalSelection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				21EE23DA29ABBC4600D55F50 /* DetailView.swift in Sources */,
 				21FE8F87299056CF00284F50 /* ContentView.swift in Sources */,
 				21F7E37829A1982E00430604 /* MainView.swift in Sources */,
+				21EE23DF29ABC27B00D55F50 /* GlobalSelection.swift in Sources */,
 				21FE8F85299056CF00284F50 /* RicksyApp.swift in Sources */,
 				21B1EB9929A2E7FC00D8D0ED /* CharacterRowView.swift in Sources */,
 			);

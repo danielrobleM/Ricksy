@@ -61,10 +61,9 @@ struct Resource: Hashable {
 
 struct ContentView: View {
   let resourcesOptions: [ResourceType] = ResourceType.allCases
-
+  @StateObject var environmentSelection = EnvironmentSelection()
   @State private var selection: ResourceType? = nil
   @State private var columnVisibility = NavigationSplitViewVisibility.all
-
   var body: some View {
     NavigationSplitView(columnVisibility: $columnVisibility) {
       List(resourcesOptions, id: \.self, selection: $selection) { resource in
@@ -76,8 +75,10 @@ struct ContentView: View {
     } content: {
       MainView(resourceType: selection ?? .character)
         .frame(minWidth: 400)
+        .environmentObject(environmentSelection)
     } detail: {
-      DetailView()
+      DetailView(resourceType: selection ?? .character)
+        .environmentObject(environmentSelection)
     }
   }
 }

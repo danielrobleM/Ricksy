@@ -9,10 +9,11 @@ import SwiftUI
 import Combine
 
 class MainViewModel: ObservableObject {
-
   init(resourceType: ResourceType) {
     self.resourceType  = resourceType
   }
+
+  @EnvironmentObject var selection: EnvironmentSelection
 
   @Published var resourceType: ResourceType
 
